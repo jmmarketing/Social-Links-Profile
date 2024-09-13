@@ -1,0 +1,15 @@
+@font-face {
+  font-family: "Inter";
+  src: url(../../assets/fonts/Inter-VariableFont.ttf);
+}
+
+body {
+  color: #fff;
+  font-family: "Inter", sans-serif;
+}
+
+.heading-secondary {
+  font-size: 2.4rem;
+  font-weight: 600;
+  line-height: 150%;
+}
