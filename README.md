@@ -14,7 +14,6 @@ This is a solution to the [Social links profile challenge on Frontend Mentor](ht
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
 **Note: Delete this note and update the table of contents based on what sections you keep.**
 
@@ -34,73 +33,132 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/jmmarketing/Social-Links-Profile-FEM)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [GitHub](https://github.com/jmmarketing/Social-Links-Profile-FEM)
+- Live Site URL: [Live](https://jmmarketing.github.io/Social-Links-Profile-FEM/)
 
 ## My process
+
+Nothing crazy here. Started with HTML and pre-planning some basic class BEM conventiions.
+
+Used Figma file to get the sizing requirements for fonts, spacing, etc..
+
+Built out bare-bones SCSS file structure (mixins, base, typography, components).
 
 ### Built with
 
 - Semantic HTML5 markup
-- CSS custom properties
+- SCSS custom properties
 - Flexbox
-- CSS Grid
-- Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+- No, Zero, Zip, Nada JavaScript needed.
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+Using this as a way to hone in and polish my front end skills. CSS/SCSS has grown over the last half decade, so being able to fluently add it to my skillset is what my focus was.
 
-To see how you can add code snippets, see below:
+Below is the whole card component.
 
 ```html
-<h1>Some HTML code I'm proud of</h1>
+<div class="card">
+  <div class="card__avatar"></div>
+  <div class="card__information-block">
+    <h2 class="heading-secondary">Jessica Randall</h2>
+    <p class="card__location">London, United Kingdon</p>
+  </div>
+  <p class="card__description">"Front-end developer and avid reader."</p>
+  <ul class="card__link-container">
+    <li class="card__link">GitHub</li>
+    <li class="card__link">Frontend Mentor</li>
+    <li class="card__link">LinkedIn</li>
+    <li class="card__link">Twitter</li>
+    <li class="card__link">Instagram</li>
+  </ul>
+</div>
 ```
 
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+.card {
+  background: #1f1f1f;
+  border-radius: 12px;
+
+  max-width: 384px;
+  padding: 40px;
+
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 0;
+  align-items: center;
+  gap: 24px;
+
+  text-align: center;
+
+  @include respond(tablet) {
+    max-width: 456px;
+  }
+
+  &__avatar {
+    height: 88px;
+    width: 88px;
+    border-radius: 999px;
+    background: url(../assets/images/avatar-jessica.jpeg) lightgray 50% / cover
+      no-repeat;
+  }
+
+  &__information-block {
+  }
+
+  &__location {
+    color: #c4f82a;
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 150%;
+  }
+
+  &__description {
+    font-size: 1.4rem;
+    font-weight: 300;
+    font-style: normal;
+    line-height: 150%;
+  }
+
+  &__link-container {
+    text-decoration: none;
+    list-style: none;
+    width: 100%;
+  }
+
+  &__link {
+    padding: 12px;
+    // width: 100%;
+
+    font-size: 1.4rem;
+    font-weight: 700;
+
+    background: #333;
+    border-radius: 8px;
+
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+
+    &:active,
+    &:hover {
+      background: #c4f82a;
+      color: #000;
+    }
+  }
 }
 ```
 
-```js
-const proudOfThisFunc = () => {
-  console.log("🎉");
-};
-```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
-
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+Again, this is to continue developming my CSS/SCSS skills, outside of the standard padding/margin/align/etc.. While I enjoy Javascript, I recognize there is a lot of over-engineering UI, while there are perfectly acceptable (less resources needed) ways of using psuedo-classes, functions, and mixins to get the same result.
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- [SCSS Resource](https://sass-lang.com/guide/) - Good old documentation.
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+- Website - [Jeffrey McLean](https://jeffreymclean.com)
+- Frontend Mentor - [@jmmarketing](https://www.frontendmentor.io/profile/jmmarketing)
+- Twitter - [@jeffe_mclean](https://www.twitter.com/jeffe_mclean)
